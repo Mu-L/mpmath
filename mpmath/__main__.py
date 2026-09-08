@@ -71,6 +71,8 @@ def main():
 
     try:
         import IPython
+        import IPython.terminal
+        import IPython.terminal.ipapp
         import traitlets
     except ImportError:
         args.no_ipython = True
