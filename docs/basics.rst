@@ -295,3 +295,42 @@ changing the working precision, use :func:`format syntax support
     '0.16666667'
     >>> f'{a:.50}'
     '0.16666666666666665741480812812369549646973609924316'
+
+Use mpmath CLI
+--------------
+
+It's possible to :ref:`run the mpmath as a module <cli>` (``python -m
+mpmath``).  This provides access to the Python (or IPython) shell, where all
+public mpmath interfaces are imported.  Also, per default, floating-point
+literals (decimal, binary or hexadecimal) are parsed as ``mpf``/``mpc`` and
+``str()``-style output for ``repr()`` is enabled.  Here is an example of
+IPython-powered shell session:
+
+.. code:: text
+
+    In [1]: 0b1.1011p-2  # binary input
+    Out[1]: 0.421875
+
+    In [2]: gamma(_)
+    Out[2]: 2.1008334194214666
+
+    In [3]: sin(1)
+    Out[3]: 0.8414709848078965
+
+    In [4]: type(_)
+    Out[4]: mpmath.ctx_mp_python.mpf
+
+    In [5]: acos(0x1.bp13)  # hexadecimal input
+    Out[5]: (0.0 + 10.227308670295587j)
+
+    In [6]: type(_)
+    Out[6]: mpmath.ctx_mp_python.mpc
+
+    In [7]: 0.8414709848078965j  # decimal input
+    Out[7]: (0.0 + 0.8414709848078965j)
+
+    In [8]: _7.imag == _3
+    Out[8]: True
+
+    In [9]: type(_7)
+    Out[9]: mpmath.ctx_mp_python.mpf
