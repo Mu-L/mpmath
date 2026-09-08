@@ -96,7 +96,7 @@ def main():
             source = """
 from mpmath._interactive import wrap_float_literals, wrap_hexbinfloats
 ip = get_ipython()
-ip.input_transformers_post.append(wrap_float_literals)
+ip.input_transformers_post.append(wrap_hexbinfloats)
 ip.input_transformers_post.append(wrap_float_literals)
 del ip
 """
