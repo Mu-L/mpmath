@@ -209,6 +209,20 @@ Note that when creating a new ``mpf``, the value will at most be as accurate as 
 
 (Binary fractions such as 0.5, 1.5, 0.75, 0.125, etc, are generally safe as input, however, since those can be represented exactly by Python floats.)
 
+You always can use hexadecimal or binary strings of didits to specify exact
+value unambiguously:
+
+    >>> mpf("0x1.5544cb90d4f68p-2")
+    mpf('0.33327024528011018')
+    >>> mpf("1.5544cb90d4f68p-2", base=16)
+    mpf('0.33327024528011018')
+    >>> f"{_:a}"
+    '0x1.5544cb90d4f68p-2'
+    >>> mpf("0b1.0101010101000100110010111001000011010100111101101p-2")
+    mpf('0.33327024528011018')
+    >>> f"{_:b}"
+    '1.0101010101000100110010111001000011010100111101101p-2'
+
 Printing
 --------
 
